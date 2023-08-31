@@ -1,0 +1,6 @@
+/* index.css */
+body {
+  background-color: rgba(252, 252, 1, 0.904);
+  margin: 0; /* Remove a margem padrão do body */
+  padding: 0; /* Remove o preenchimento padrão do body */
+}
