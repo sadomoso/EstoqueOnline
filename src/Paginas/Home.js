@@ -1,28 +1,34 @@
 import React from "react";
 import { Box, Toolbar, IconButton, AppBar, Typography, Button } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import { AccountCircle } from "@mui/icons-material";
+import TextFieldP from "../Components/TextField.module";
+import ButtonP from "../Components/Button.module"
 
 export default function Home() {
     return (
-        <Box>
-            <AppBar sx={{ backgroundColor: 'black' }}>
-                <Toolbar>
-                    <IconButton size="larger" sx={{ p: 2 }} color="inherit">
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography padding={2} variant='h3' display="inline-flex">Logo</Typography>
-                    <Typography marginTop={2} marginLeft={3} variant='h6' display="inline-flex">CADASTRAR</Typography>
-                    <Typography marginTop={2} marginLeft={3} variant='h6' display="inline-flex">SACAR</Typography>
-
-                    <Box sx={{ flexGrow: 1 }} /> {/* Espaço flexível para empurrar o botão para a direita */}
-                    <Box>
-                        <Typography padding={2} variant='h7' display="inline-flex">SALDO: R$</Typography>
-                        <Typography variant='h7' display="inline-flex">0,00</Typography>
-                    </Box>
-                    <Button color="inherit"><AccountCircle sx={{fontSize:'2rem'}} /></Button>
-                </Toolbar>
-            </AppBar>
+        <Box display='flex' justifyContent='center' alignItems='center' height='100vh'>
+            <Box
+                 component='form'
+                 width='40vh'
+                 height='70vh'
+                 p={2}
+                 marginTop={'100px'}
+                 display='flex'
+                 flexDirection='column'
+                 alignItems='center'
+                 justifyContent='center'
+                 borderRadius={'10px'}
+                 borderColor={'Grey'}
+                 sx={{ backgroundColor: 'white' }}
+                 border={'4px solid'}
+                 boxShadow='0px 3px 6px rgba(0, 0, 0, 0.16)'>
+                    <Typography>CADASTRAR</Typography>
+                    <TextFieldP propsTexto={{ Texto: "Usuario" }} propsType={{ Type: 'text' }}></TextFieldP>  
+                    <TextFieldP propsTexto={{ Texto: "Email" }} propsType={{ Type: 'email' }}></TextFieldP>  
+                    <TextFieldP propsTexto={{ Texto: "CNPJ" }} propsType={{ Type: 'text' }}></TextFieldP> 
+                    <TextFieldP propsTexto={{ Texto: "Senha" }} propsType={{ Type: 'password' }}></TextFieldP>  
+                    <TextFieldP propsTexto={{ Texto: "Confirmação da senha" }} propsType={{ Type: 'password' }}></TextFieldP>   
+                    <ButtonP Texto='Confirmar' propsFunciton={(' ')} />
+                 </Box>
         </Box>
     );
 }
