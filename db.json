@@ -3,12 +3,14 @@
         {
             "id": 1,
             "Usuario": "Felipe",
-            "Senha": "Ferreira"
+            "Senha": "Ferreira",
+            "ADM" : true
         },
         {
             "id" : 2,
             "Usuario" : "Luciano",
-            "Senha" : "123"
+            "Senha" : "123",
+            "ADM" : false
         }
     ]
 }
