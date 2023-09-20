@@ -7,8 +7,8 @@ export default function Menu(){
             <Toolbar>
                 <Typography padding={2} variant='h3' display="inline-flex">Logo</Typography>
                 <Box sx={{ flexGrow: 1 }} /> {/* Espaço flexível para empurrar o botão para a direita */}
-                <Button marginTop={2} marginLeft={3} variant='h5' display="inline-flex">CADASTRAR</Button>
-                <Button marginTop={2} marginLeft={3} variant='h5' display="inline-flex">Logar</Button>
+                <Button variant='h5' display="inline-flex">CADASTRAR</Button>
+                <Button variant='h5' display="inline-flex">Logar</Button>
             </Toolbar>
         </AppBar>
     )

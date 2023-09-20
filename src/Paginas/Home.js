@@ -27,7 +27,7 @@ export default function Home() {
                     <TextFieldP propsTexto={{ Texto: "CNPJ" }} propsType={{ Type: 'text' }}></TextFieldP> 
                     <TextFieldP propsTexto={{ Texto: "Senha" }} propsType={{ Type: 'password' }}></TextFieldP>  
                     <TextFieldP propsTexto={{ Texto: "Confirmação da senha" }} propsType={{ Type: 'password' }}></TextFieldP>   
-                    <ButtonP Texto='Confirmar' propsFunciton={(' ')} />
+                    <ButtonP Texto='Confirmar' />
                  </Box>
         </Box>
     );
