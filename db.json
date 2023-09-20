@@ -12,5 +12,25 @@
             "Senha" : "123",
             "ADM" : false
         }
+    ],
+    "Produtos": [
+        {
+            "id" : 1,
+            "NomeProduto" : "Teste",
+            "ValorBase" : 2.99,
+            "Descricao": "Um belo produto"
+        },
+        {
+            "id" : 2,
+            "NomeProduto" : "Teste",
+            "ValorBase" : 3.99,
+            "Descricao": "Um belo produto"
+        },
+        {
+            "id" : 3,
+            "NomeProduto" : "Teste",
+            "ValorBase" : 1.99,
+            "Descricao": "Um belo produto"
+        }
     ]
 }
