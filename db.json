@@ -4,32 +4,56 @@
             "id": 1,
             "Usuario": "Felipe",
             "Senha": "Ferreira",
-            "ADM" : true
+            "ADM": true
         },
         {
-            "id" : 2,
-            "Usuario" : "Luciano",
-            "Senha" : "123",
-            "ADM" : false
+            "id": 2,
+            "Usuario": "Luciano",
+            "Senha": "123",
+            "ADM": false
         }
     ],
     "Produtos": [
         {
-            "id" : 1,
-            "NomeProduto" : "Teste",
-            "ValorBase" : 2.99,
+            "id": 1,
+            "NomeProduto": "Coca Cola",
+            "ValorBase": 2.99,
+            "Estoque": 100,
             "Descricao": "Um belo produto"
         },
         {
-            "id" : 2,
-            "NomeProduto" : "Teste",
-            "ValorBase" : 3.99,
+            "id": 2,
+            "NomeProduto": "Balduco",
+            "Estoque": 1003,
+            "ValorBase": 3.99,
             "Descricao": "Um belo produto"
         },
         {
-            "id" : 3,
-            "NomeProduto" : "Teste",
-            "ValorBase" : 1.99,
+            "id": 3,
+            "NomeProduto": "Aimore",
+            "ValorBase": 1.99,
+            "Estoque": 10,
+            "Descricao": "Um belo produto"
+        },
+        {
+            "id": 4,
+            "NomeProduto": "Polvilho",
+            "ValorBase": 1.99,
+            "Estoque": 10,
+            "Descricao": "Um belo produto"
+        },
+        {
+            "id": 5,
+            "NomeProduto": "Fanta",
+            "ValorBase": 1.99,
+            "Estoque": 10,
+            "Descricao": "Um belo produto"
+        },
+        {
+            "id": 6,
+            "NomeProduto": "Fanta Uva",
+            "ValorBase": 1.99,
+            "Estoque": 10,
             "Descricao": "Um belo produto"
         }
     ]
