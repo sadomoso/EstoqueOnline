@@ -1,15 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, List, ListItem, Typography } from "@mui/material";
-import requisicaoProdutos from "../Requisicoes/Produtos.Requisicao";
+import { Box, Button, List, ListItem, Typography, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
+import GetProdutos from "../Requisicoes/Get.Requisicao";
 import ButtonP from '../Components/Button.module'
+import TextFieldP from "../Components/TextField.module";
+import putRequisicao from "../Requisicoes/Put.Requisicao";
 
 export default function Home() {
     const [produtos, setProdutos] = useState([]);
+    const [openPopup, setOpenPopup] = useState(false); // Estado para controlar a exibição do popup
+    const [produtoSelecionado, setProdutoSelecionado] = useState(null); // Estado para armazenar o produto selecionado
+    const [quantidade, setQuantidade] = useState(0)
 
     useEffect(() => {
         const execucaoProdutos = async () => {
             try {
-                const produtosData = await requisicaoProdutos();
+                const produtosData = await GetProdutos();
                 if (produtosData) {
                     setProdutos(produtosData);
                 } else {
@@ -26,6 +31,12 @@ export default function Home() {
     const handleVenderClick = (produto) => {
         // Lógica para vender o produto
         console.log(`Vendido: ${produto.NomeProduto}`);
+        setProdutoSelecionado(produto); // Define o produto selecionado
+        setOpenPopup(true); // Abre o popup
+    };
+
+    const handleClosePopup = () => {
+        setOpenPopup(false); // Fecha o popup
     };
 
     return (
@@ -74,7 +85,7 @@ export default function Home() {
                             <Button
                                 variant="contained"
                                 color="success"
-                                sx={{ height:'3vh', widht: '4vh', position: 'absolute', right: '4vh', bottom: '0.5vh' }}
+                                sx={{ height: '3vh', widht: '4vh', position: 'absolute', right: '4vh', bottom: '0.5vh' }}
                                 onClick={() => handleVenderClick(produto)}
                             >
                                 Vender
@@ -83,6 +94,37 @@ export default function Home() {
                     ))}
                 </List>
             </Box>
+            {/* Popup para confirmar a venda */}
+            <Dialog open={openPopup} onClose={handleClosePopup}>
+                <DialogTitle>Dados da Venda</DialogTitle>
+                <DialogContent>
+                    {produtoSelecionado && (
+                        <Box>
+                            <Typography>
+                                {produtoSelecionado.NomeProduto}
+                                <br />
+                                Estoque: {produtoSelecionado.Estoque}
+                                <br />
+                                Valor unitário R$: {produtoSelecionado.ValorBase}
+                                <br />
+                                Insira a quantidade a ser vendida
+                            </Typography>
+
+
+                            <TextFieldP propsOnChange={(event) => setQuantidade(event.target.value)} propsTexto={'Quantidade a vender'} propsType={Number}></TextFieldP>
+                        </Box>
+                    )}
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleClosePopup} color="primary">
+                        Cancelar
+                    </Button>
+                    <Button onClick={() => putRequisicao(produtoSelecionado.id, produtoSelecionado.NomeProduto, produtoSelecionado.ValorBase, produtoSelecionado.Estoque, produtoSelecionado.Descricao, quantidade)} color="primary">
+                        Confirmar Venda
+
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </Box>
     );
 }
