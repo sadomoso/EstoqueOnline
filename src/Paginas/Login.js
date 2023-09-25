@@ -17,13 +17,12 @@ export default function Login() {
 
       if (loginsucesso === true) {
         navigate("/Home");
-        console.log("chegou aqui");
       } else {
         alert("Usuário ou Senha incorretos");
       }
     } catch (error) {
       console.error(error);
-      alert("Erro ao fazer login"); // Trate o erro de login de acordo com suas necessidades
+      alert("Erro ao fazer login");
     }
   };
 
