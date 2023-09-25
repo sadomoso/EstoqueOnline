@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, List, ListItem, Typography, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
+import { Box, Button, List, ListItem, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Grid } from "@mui/material";
 import GetProdutos from "../Requisicoes/Get.Requisicao";
 import ButtonP from '../Components/Button.module'
 import TextFieldP from "../Components/TextField.module";
@@ -40,60 +40,53 @@ export default function Home() {
     };
 
     return (
-        <Box
-            display="flex"
-            justifyContent="center"
-            alignItems="center"
-            height="100vh"
-        >
-            <Box
-                component="form"
-                width="100vh"
-                height="70vh"
-                p={2}
-                marginTop={"100px"}
-                display="flex"
-                flexDirection="column"
-                justifyContent="space-between"
-                borderRadius={"10px"}
-                borderColor={"Grey"}
-                sx={{ backgroundColor: "white" }}
-                border={"4px solid"}
-                boxShadow="0px 3px 6px rgba(0, 0, 0, 0.16)"
-            >
-                <List sx={{
-                    maxHeight: "calc(70vh - 40px)",
-                    overflowY: "auto",
-                }}>
-                    {produtos.map((produto, index) => (
-                        <ListItem
-                            key={index}
-                            sx={{
-                                height: "10vh",
-                                padding: "1px",
-                                borderRadius: "2px",
-                                border: "1px solid",
-                                borderColor: "black",
-                                marginBottom: '2vh',
-                                position: "relative",
-                            }}
-                        >
-                            <Typography sx={{ position: "absolute", bottom: "0.5vh", left: "4vh" }}>Codigo: {produto.id}</Typography>
-                            <Typography sx={{ position: "absolute", top: "0.5vh", left: "4vh" }}>{produto.NomeProduto}</Typography>
-                            <Typography sx={{ position: "absolute", top: "0.5vh", right: "4vh", }}> R$: {produto.ValorBase}</Typography>
-                            <Typography sx={{ position: "absolute", top: "0.5vh", left: "45%" }}> Estoque: {produto.Estoque}</Typography>
-                            <Button
-                                variant="contained"
-                                color="success"
-                                sx={{ height: '3vh', widht: '4vh', position: 'absolute', right: '4vh', bottom: '0.5vh' }}
-                                onClick={() => handleVenderClick(produto)}
+        <Grid marginTop={4} container justifyContent="center" alignItems="center" height="100vh">
+            <Grid item xs={12} sm={6} md={4}>
+                <Box
+                    maxwidth={'80vh'}
+                    component="form"
+                    p={2}
+                    display="flex"
+                    flexDirection="column"
+                    justifyContent="space-between"
+                    borderRadius={2}
+                    borderColor="Grey"
+                    sx={{ backgroundColor: "white" }}
+                    border="3px solid"
+                    boxShadow="0px 3px 6px rgba(0, 0, 0, 0.16)"
+                >
+                    <List sx={{ maxHeight: "calc(70vh - 40px)", overflowY: "auto" }}>
+                        {produtos.map((produto, index) => (
+                            <ListItem
+                                key={index}
+                                sx={{
+                                    height: "10vh",
+                                    padding: "1px",
+                                    borderRadius: "2px",
+                                    border: "1px solid",
+                                    borderColor: "black",
+                                    marginBottom: '2vh',
+                                    position: "relative",
+                                }}
                             >
-                                Vender
-                            </Button>
-                        </ListItem>
-                    ))}
-                </List>
-            </Box>
+                                <Typography sx={{ position: "absolute", bottom: "0.5vh", left: "4vh" }}>Codigo: {produto.id}</Typography>
+                                <Typography sx={{ position: "absolute", top: "0.5vh", left: "4vh" }}>{produto.NomeProduto}</Typography>
+                                <Typography sx={{ position: "absolute", top: "0.5vh", right: "4vh", }}> R$: {produto.ValorBase}</Typography>
+                                <Typography sx={{ position: "absolute", top: "0.5vh", left: "40%" }}> Estoque: {produto.Estoque}</Typography>
+                                <Button
+                                    variant="contained"
+                                    color="success"
+                                    sx={{ height: '3vh', width: '4vh', position: 'absolute', right: '4vh', bottom: '0.5vh' }}
+                                    onClick={() => handleVenderClick(produto)}
+                                >
+                                    Vender
+                                </Button>
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
+            </Grid>
+
             {/* Popup para confirmar a venda */}
             <Dialog open={openPopup} onClose={handleClosePopup}>
                 <DialogTitle>Dados da Venda</DialogTitle>
@@ -110,7 +103,6 @@ export default function Home() {
                                 Insira a quantidade a ser vendida
                             </Typography>
 
-
                             <TextFieldP propsOnChange={(event) => setQuantidade(event.target.value)} propsTexto={'Quantidade a vender'} propsType={Number}></TextFieldP>
                         </Box>
                     )}
@@ -121,10 +113,9 @@ export default function Home() {
                     </Button>
                     <Button onClick={() => putRequisicao(produtoSelecionado.id, produtoSelecionado.NomeProduto, produtoSelecionado.ValorBase, produtoSelecionado.Estoque, produtoSelecionado.Descricao, quantidade)} color="primary">
                         Confirmar Venda
-
                     </Button>
                 </DialogActions>
             </Dialog>
-        </Box>
+        </Grid>
     );
 }
