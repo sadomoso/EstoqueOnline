@@ -18,49 +18,49 @@
       "id": 4,
       "NomeProduto": "Polvilho",
       "ValorBase": 6.01,
-      "Estoque": -290,
+      "Estoque": 418,
       "Descricao": "Um belo produto"
     },
     {
       "id": 5,
       "NomeProduto": "Fanta",
       "ValorBase": 9.99,
-      "Estoque": -10,
+      "Estoque": 300,
       "Descricao": "Um belo produto"
     },
     {
       "id": 6,
       "NomeProduto": "Fanta Uva",
-      "ValorBase": 4,
-      "Estoque": -11.99,
+      "ValorBase": 4.99,
+      "Estoque": 20,
       "Descricao": "Um belo produto"
     },
     {
       "id": 5,
       "NomeProduto": "Fanta",
       "ValorBase": 9.99,
-      "Estoque": -10,
+      "Estoque": 10,
       "Descricao": "Um belo produto"
     },
     {
       "id": 6,
       "NomeProduto": "Fanta Uva",
       "ValorBase": 4,
-      "Estoque": -11.99,
+      "Estoque": 1119,
       "Descricao": "Um belo produto"
     },
     {
       "id": 5,
       "NomeProduto": "Fanta",
       "ValorBase": 9.99,
-      "Estoque": -10,
+      "Estoque": 231,
       "Descricao": "Um belo produto"
     },
     {
       "id": 6,
       "NomeProduto": "Fanta Uva",
       "ValorBase": 4,
-      "Estoque": -11.99,
+      "Estoque": 32,
       "Descricao": "Um belo produto"
     }
   ]

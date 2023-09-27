@@ -10,8 +10,8 @@ export default function Menu() {
             <Typography variant='h3' display="inline-flex">ESTOQUE</Typography>
           </Grid>
           <Grid item xs={12} md={6} container justifyContent="flex-end">
-            <Button variant='h5' display="inline-flex">CADASTRAR</Button>
-            <Button variant='h5' display="inline-flex">ACESSAR</Button>
+            <Button variant='h5' display="inline-flex"></Button>
+            <Button variant='h5' display="inline-flex"></Button>
           </Grid>
         </Grid>
       </Toolbar>

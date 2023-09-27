@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, List, ListItem, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Grid } from "@mui/material";
+import { Box, Button, List, ListItem, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Grid, TextField } from "@mui/material";
 import GetProdutos from "../Requisicoes/Get.Requisicao";
 import ButtonP from '../Components/Button.module'
 import TextFieldP from "../Components/TextField.module";
@@ -88,26 +88,28 @@ export default function Home() {
             </Grid>
 
             {/* Popup para confirmar a venda */}
-            <Dialog open={openPopup} onClose={handleClosePopup}>
-                <DialogTitle>Dados da Venda</DialogTitle>
-                <DialogContent>
+            <Dialog open={openPopup} onClose={handleClosePopup} fullScreen>
+                <DialogTitle style={{ backgroundColor: "black", color: "white" }}>Dados da Venda</DialogTitle>
+                <DialogContent style={{ backgroundColor: "yellow" }} >
                     {produtoSelecionado && (
-                        <Box>
-                            <Typography>
-                                {produtoSelecionado.NomeProduto}
-                                <br />
-                                Estoque: {produtoSelecionado.Estoque}
-                                <br />
-                                Valor unitário R$: {produtoSelecionado.ValorBase}
-                                <br />
-                                Insira a quantidade a ser vendida
-                            </Typography>
+                        <Box sx={{ backgroundColor: 'white', height: '60vh', marginY: '10vh', padding: '2vh' }}  >
+                            <Box display="flex" justifyContent="space-between" alignItems="center" height="10vh" fullWidth>
+                                <Typography>Nome do produto: {produtoSelecionado.NomeProduto}</Typography>
+                                <Typography>Estoque: {produtoSelecionado.Estoque}</Typography>
+                                <Typography>Valor unitário R$: {produtoSelecionado.ValorBase}</Typography>
+                            </Box>
+                            <Box display='flex' justifyContent="space-between" fullWidth>
+                                <TextField sx={{ backgroundColor: "white"}} onChange={(event) => setQuantidade(event.target.value)} variant={'outlined'} label={'Quantidade a vender'} width={'2'}></TextField>
+                                <TextField sx={{ backgroundColor: "white" }} variant={'outlined'} label={'Nome do comprador'} width={'auto'}></TextField>
+                                <TextField sx={{ backgroundColor: "white" }} variant={'outlined'} label={'Sobrenome do comprador'} width={'auto'}></TextField>
+                                <TextField sx={{ backgroundColor: "white" }} variant={'outlined'} label={'CPF ou CNPJ do comprador'} width={'auto'}></TextField>
+                                <TextField sx={{ backgroundColor: "white" }} variant={'outlined'} label={'Telefone de contato'} width={'auto'}></TextField>
 
-                            <TextFieldP propsOnChange={(event) => setQuantidade(event.target.value)} propsTexto={'Quantidade a vender'} propsType={Number}></TextFieldP>
+                            </Box>
                         </Box>
                     )}
                 </DialogContent>
-                <DialogActions>
+                <DialogActions style={{ backgroundColor: "black" }}>
                     <Button onClick={handleClosePopup} color="primary">
                         Cancelar
                     </Button>
