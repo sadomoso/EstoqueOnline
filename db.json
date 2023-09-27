@@ -62,6 +62,34 @@
       "ValorBase": 4,
       "Estoque": 32,
       "Descricao": "Um belo produto"
+    },
+    {
+      "id": 5,
+      "NomeProduto": "Fanta",
+      "ValorBase": 9.99,
+      "Estoque": -10,
+      "Descricao": "Um belo produto"
+    },
+    {
+      "id": 6,
+      "NomeProduto": "Fanta Uva",
+      "ValorBase": 4,
+      "Estoque": -11.99,
+      "Descricao": "Um belo produto"
+    },
+    {
+      "id": 5,
+      "NomeProduto": "Fanta",
+      "ValorBase": 9.99,
+      "Estoque": -10,
+      "Descricao": "Um belo produto"
+    },
+    {
+      "id": 6,
+      "NomeProduto": "Fanta Uva",
+      "ValorBase": 4,
+      "Estoque": -11.99,
+      "Descricao": "Um belo produto"
     }
   ]
 }

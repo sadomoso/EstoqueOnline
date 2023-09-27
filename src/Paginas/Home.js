@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, List, ListItem, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Grid, TextField } from "@mui/material";
+
 import GetProdutos from "../Requisicoes/Get.Requisicao";
 import ButtonP from '../Components/Button.module'
 import TextFieldP from "../Components/TextField.module";
@@ -92,6 +93,7 @@ export default function Home() {
                 <DialogTitle style={{ backgroundColor: "black", color: "white" }}>Dados da Venda</DialogTitle>
                 <DialogContent style={{ backgroundColor: "yellow" }} >
                     {produtoSelecionado && (
+
                         <Box sx={{ backgroundColor: 'white', height: '60vh', marginY: '10vh', padding: '2vh' }}  >
                             <Box display="flex" justifyContent="space-between" alignItems="center" height="10vh" fullWidth>
                                 <Typography>Nome do produto: {produtoSelecionado.NomeProduto}</Typography>
@@ -106,6 +108,7 @@ export default function Home() {
                                 <TextField sx={{ backgroundColor: "white" }} variant={'outlined'} label={'Telefone de contato'} width={'auto'}></TextField>
 
                             </Box>
+
                         </Box>
                     )}
                 </DialogContent>
