@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, List, ListItem, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Grid } from "@mui/material";
+import { Box, Button, List, ListItem, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Grid, TextField } from "@mui/material";
+
 import GetProdutos from "../Requisicoes/Get.Requisicao";
 import ButtonP from '../Components/Button.module'
 import TextFieldP from "../Components/TextField.module";
@@ -10,6 +11,9 @@ export default function Home() {
     const [openPopup, setOpenPopup] = useState(false); // Estado para controlar a exibição do popup
     const [produtoSelecionado, setProdutoSelecionado] = useState(null); // Estado para armazenar o produto selecionado
     const [quantidade, setQuantidade] = useState(0)
+    const [nomeComprador, setNomeComprador] = useState(null)
+    const [endereco, setEndereco] = useState(null)
+    const [telefone, setTelefone] = useState(null)
 
     useEffect(() => {
         const execucaoProdutos = async () => {
@@ -88,34 +92,102 @@ export default function Home() {
             </Grid>
 
             {/* Popup para confirmar a venda */}
-            <Dialog open={openPopup} onClose={handleClosePopup}>
-                <DialogTitle>Dados da Venda</DialogTitle>
-                <DialogContent>
+            <Dialog open={openPopup} onClose={handleClosePopup} fullScreen>
+                <DialogTitle style={{ backgroundColor: "black", color: "white" }}>Dados da Venda</DialogTitle>
+                <DialogContent style={{ backgroundColor: "yellow" }}>
                     {produtoSelecionado && (
-                        <Box>
-                            <Typography>
-                                {produtoSelecionado.NomeProduto}
-                                <br />
-                                Estoque: {produtoSelecionado.Estoque}
-                                <br />
-                                Valor unitário R$: {produtoSelecionado.ValorBase}
-                                <br />
-                                Insira a quantidade a ser vendida
-                            </Typography>
+                        <Grid container spacing={3}>
+                            <Grid item xs={12}>
+                                <Box sx={{ backgroundColor: 'white', padding: '16px' }}>
+                                    <Typography variant="h6" gutterBottom>Detalhes do Produto</Typography>
+                                    <Grid container spacing={2}>
+                                        <Grid item xs={12} sm={6}>
+                                            <Typography variant="body1"><strong>Nome do produto:</strong> {produtoSelecionado.NomeProduto}</Typography>
+                                        </Grid>
+                                        <Grid item xs={12} sm={6}>
+                                            <Typography variant="body1"><strong>Estoque:</strong> {produtoSelecionado.Estoque}</Typography>
+                                        </Grid>
+                                        <Grid item xs={12} sm={6}>
+                                            <Typography variant="body1"><strong>Valor unitário:</strong> R$ {produtoSelecionado.ValorBase}</Typography>
+                                        </Grid>
+                                    </Grid>
+                                </Box>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    sx={{ backgroundColor: "white" }}
+                                    onChange={(event) => setQuantidade(event.target.value)}
+                                    variant="outlined"
+                                    label="Quantidade a vender"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    sx={{ backgroundColor: "white" }}
+                                    onChange={(event) => setNomeComprador(event.target.value)}
+                                    variant="outlined"
+                                    label="Nome do comprador"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    sx={{ backgroundColor: "white" }}
+                                    onChange={(event) => setEndereco(event.target.value)}
+                                    variant="outlined"
+                                    label="Endereço"
+                                    fullWidth
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <TextField
+                                    sx={{ backgroundColor: "white" }}
+                                    onChange={(event) => setTelefone(event.target.value)}
+                                    variant="outlined"
+                                    label="Telefone de contato"
+                                    fullWidth
+                                />
 
-                            <TextFieldP propsOnChange={(event) => setQuantidade(event.target.value)} propsTexto={'Quantidade a vender'} propsType={Number}></TextFieldP>
-                        </Box>
+                            </Grid>
+
+                            <Grid item xs={12}>
+                                <Box sx={{ backgroundColor: 'white', padding: '16px' }}>
+                                    <Typography variant="body1"><strong>Valor total a pagar:</strong> R$ {produtoSelecionado.ValorBase * quantidade}</Typography>
+                                </Box>
+                            </Grid>
+
+
+
+
+
+                        </Grid>
                     )}
                 </DialogContent>
-                <DialogActions>
+                <DialogActions style={{ backgroundColor: "black" }}>
                     <Button onClick={handleClosePopup} color="primary">
                         Cancelar
                     </Button>
-                    <Button onClick={() => putRequisicao(produtoSelecionado.id, produtoSelecionado.NomeProduto, produtoSelecionado.ValorBase, produtoSelecionado.Estoque, produtoSelecionado.Descricao, quantidade)} color="primary">
+                    <Button
+                        onClick={() => putRequisicao(
+                            produtoSelecionado.id,
+                            produtoSelecionado.NomeProduto,
+                            produtoSelecionado.ValorBase,
+                            produtoSelecionado.Estoque,
+                            produtoSelecionado.Descricao,
+                            quantidade,
+                            handleClosePopup,
+                            nomeComprador,
+                            endereco,
+                            telefone
+                        )}
+                        color="primary"
+                    >
                         Confirmar Venda
                     </Button>
                 </DialogActions>
             </Dialog>
-        </Grid>
+
+        </Grid >
     );
 }

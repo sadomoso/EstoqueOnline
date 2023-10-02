@@ -1,23 +1,36 @@
 import axios from "axios";
+import postRequisicao from "./Post.Requisicao";
 
-export default async function putRequisicao(id, NomeProduto, ValorBase, Estoque, Descricao, quantidade) {
+export default async function putRequisicao(id, NomeProduto, ValorBase, Estoque, Descricao, quantidade, vendaConfirmadaCallback, nomeComprador, endereco, telefone) {
     try {
-        const resposta = await axios.put(`http://localhost:4000/Produtos/${id}`, {
-            id: id,
-            NomeProduto: NomeProduto,
-            ValorBase: ValorBase,
-            Estoque: Estoque - quantidade,
-            Descricao: Descricao
+        const checagemDados = await axios.get(`http://localhost:4000/Produtos/${id}`);
+        let validadorDeEstoque = checagemDados.data.Estoque - quantidade;
+        console.log(validadorDeEstoque, checagemDados.data.Estoque, id );
+        if (validadorDeEstoque >= 0) {
+            try {
+                const resposta = await axios.put(`http://localhost:4000/Produtos/${id}`, {
+                    id: id,
+                    NomeProduto: NomeProduto,
+                    ValorBase: ValorBase,
+                    Estoque: validadorDeEstoque, // Subtrai a quantidade do estoque atual
+                    Descricao: Descricao
+                });
 
+                if (resposta.status === 200 && nomeComprador !== null && endereco !== null && telefone !== null) {
+                    postRequisicao(NomeProduto, ValorBase, Descricao, quantidade, nomeComprador, endereco, telefone);
+                    vendaConfirmadaCallback();
+                } else {
+                    alert('Dados inválidos');
+                }
 
-        });
-        if (resposta.status === 200) {
-            console.log('Produto atualizado com sucesso!');
+            } catch (error) {
+                alert(`Erro ao conectar ao banco de dados: ${error.message}`);
+            }
         } else {
-            console.log(id)
-            console.log('Erro ao atualizar o produto.');
+            alert("Não há estoque suficiente para esta venda!");
         }
+
     } catch (error) {
-        console.error('Erro ao conectar ao banco de dados:', id);
+        alert(`Erro ao verificar o estoque: ${error.message}`);
     }
 }
