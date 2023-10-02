@@ -16,13 +16,13 @@ export default async function postRequisicao(NomeProduto, ValorBase, Descricao, 
             Descricao: Descricao
         });
         
-        if (respostaRegistroVendas.status === 200) {
+        if (respostaRegistroVendas.status === 201) {
             return true;
         } else {
             return false;
         }
     } catch (error) {
-        console.log("Deu errado o envio", error);
+        alert("Deu errado o envio", error);
         return false;
     }
 }

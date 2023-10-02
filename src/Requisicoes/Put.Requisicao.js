@@ -1,3 +1,5 @@
+// Arquivo: Put.Requisicao.js
+
 import axios from "axios";
 import postRequisicao from "./Post.Requisicao";
 
@@ -5,14 +7,14 @@ export default async function putRequisicao(id, NomeProduto, ValorBase, Estoque,
     try {
         const checagemDados = await axios.get(`http://localhost:4000/Produtos/${id}`);
         let validadorDeEstoque = checagemDados.data.Estoque - quantidade;
-        console.log(validadorDeEstoque);
+
         if (validadorDeEstoque >= 0) {
             try {
                 const resposta = await axios.put(`http://localhost:4000/Produtos/${id}`, {
                     id: id,
                     NomeProduto: NomeProduto,
                     ValorBase: ValorBase,
-                    Estoque: validadorDeEstoque, // Subtrai a quantidade do estoque atual
+                    Estoque: Estoque - quantidade,
                     Descricao: Descricao
                 });
 

@@ -25,14 +25,14 @@
       "id": 5,
       "NomeProduto": "Fanta",
       "ValorBase": 9.99,
-      "Estoque": 273,
+      "Estoque": 272,
       "Descricao": "Um belo produto"
     },
     {
       "id": 6,
       "NomeProduto": "Fanta Uva",
-      "ValorBase": 4.99,
-      "Estoque": 20,
+      "ValorBase": 4,
+      "Estoque": 1118,
       "Descricao": "Um belo produto"
     },
     {
