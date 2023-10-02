@@ -18,14 +18,14 @@
       "id": 4,
       "NomeProduto": "Polvilho",
       "ValorBase": 6.01,
-      "Estoque": null,
+      "Estoque": -1,
       "Descricao": "Um belo produto"
     },
     {
       "id": 5,
       "NomeProduto": "Fanta",
       "ValorBase": 9.99,
-      "Estoque": 300,
+      "Estoque": 273,
       "Descricao": "Um belo produto"
     },
     {
@@ -92,7 +92,7 @@
       "Descricao": "Um belo produto"
     }
   ],
-  "Registro-de-Vendas" : [
+  "Registro-de-Vendas": [
     {
       "nomeComprador": "Felipe",
       "Endereco": "Minas Gerais, Belo Horizonte, Castelo, Rua Doutor Rubens Guimarães, 147, 402 ",
