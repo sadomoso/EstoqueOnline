@@ -9,7 +9,7 @@ export default function TextFieldP({ propsTexto, propsType, propsOnChange }) {
         <TextField
             label={Texto}
             type={Type}
-            fullWidth
+            
             onChange={propsOnChange}
             variant="outlined"
             sx={{ p: 0, my: 2, justifyContent: 'center', alignItems: 'center' }}

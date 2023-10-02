@@ -18,7 +18,7 @@
       "id": 4,
       "NomeProduto": "Polvilho",
       "ValorBase": 6.01,
-      "Estoque": 418,
+      "Estoque": null,
       "Descricao": "Um belo produto"
     },
     {

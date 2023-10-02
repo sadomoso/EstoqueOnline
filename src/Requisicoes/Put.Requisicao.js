@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function putRequisicao(id, NomeProduto, ValorBase, Estoque, Descricao, quantidade) {
+export default async function putRequisicao(id, NomeProduto, ValorBase, Estoque, Descricao, quantidade, vendaConfirmadaCallback, nomeComprador, endereco, telefone) {
     try {
         const resposta = await axios.put(`http://localhost:4000/Produtos/${id}`, {
             id: id,
@@ -11,11 +11,12 @@ export default async function putRequisicao(id, NomeProduto, ValorBase, Estoque,
 
 
         });
-        if (resposta.status === 200) {
+        if (resposta.status === 200 && quantidade > 0) {
             console.log('Produto atualizado com sucesso!');
+            vendaConfirmadaCallback();
         } else {
             console.log(id)
-            console.log('Erro ao atualizar o produto.');
+            alert('Dados invalidos');
         }
     } catch (error) {
         console.error('Erro ao conectar ao banco de dados:', id);
