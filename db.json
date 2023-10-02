@@ -91,5 +91,12 @@
       "Estoque": -11.99,
       "Descricao": "Um belo produto"
     }
+  ],
+  "Registro-de-Vendas" : [
+    {
+      "nomeComprador": "Felipe",
+      "Endereco": "Minas Gerais, Belo Horizonte, Castelo, Rua Doutor Rubens Guimarães, 147, 402 ",
+      "Telefone": 553194462902
+    }
   ]
 }

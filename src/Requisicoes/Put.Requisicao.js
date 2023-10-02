@@ -8,7 +8,7 @@ export default async function putRequisicao(id, NomeProduto, ValorBase, Estoque,
             ValorBase: ValorBase,
             Estoque: Estoque - quantidade,
             Descricao: Descricao
-
+        
 
         });
         if (resposta.status === 200 && quantidade > 0) {
