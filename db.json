@@ -18,85 +18,21 @@
       "id": 4,
       "NomeProduto": "Polvilho",
       "ValorBase": 6.01,
-      "Estoque": null,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 5,
-      "NomeProduto": "Fanta",
-      "ValorBase": 9.99,
-      "Estoque": 300,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 6,
-      "NomeProduto": "Fanta Uva",
-      "ValorBase": 4.99,
-      "Estoque": 20,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 5,
-      "NomeProduto": "Fanta",
-      "ValorBase": 9.99,
-      "Estoque": 10,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 6,
-      "NomeProduto": "Fanta Uva",
-      "ValorBase": 4,
-      "Estoque": 1119,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 5,
-      "NomeProduto": "Fanta",
-      "ValorBase": 9.99,
-      "Estoque": 231,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 6,
-      "NomeProduto": "Fanta Uva",
-      "ValorBase": 4,
-      "Estoque": 32,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 5,
-      "NomeProduto": "Fanta",
-      "ValorBase": 9.99,
-      "Estoque": -10,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 6,
-      "NomeProduto": "Fanta Uva",
-      "ValorBase": 4,
-      "Estoque": -11.99,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 5,
-      "NomeProduto": "Fanta",
-      "ValorBase": 9.99,
-      "Estoque": -10,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 6,
-      "NomeProduto": "Fanta Uva",
-      "ValorBase": 4,
-      "Estoque": -11.99,
+      "Estoque": 851,
       "Descricao": "Um belo produto"
     }
   ],
-  "Registro-de-Vendas" : [
+  "Registro-de-Vendas": [
     {
-      "nomeComprador": "Felipe",
-      "Endereco": "Minas Gerais, Belo Horizonte, Castelo, Rua Doutor Rubens Guimarães, 147, 402 ",
-      "Telefone": 553194462902
+      "NomeComprador": "felipe",
+      "Endereco": "rua doutor rubens guimarães",
+      "Telefone": "31994462902",
+      "ValorTotal": 739.23,
+      "NomeProduto": "Polvilho",
+      "ValorBase": 6.01,
+      "Quantidade": "123",
+      "Descricao": "Um belo produto",
+      "id": 1
     }
   ]
 }
