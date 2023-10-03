@@ -18,77 +18,7 @@
       "id": 4,
       "NomeProduto": "Polvilho",
       "ValorBase": 6.01,
-      "Estoque": -1,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 5,
-      "NomeProduto": "Fanta",
-      "ValorBase": 9.99,
-      "Estoque": 272,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 6,
-      "NomeProduto": "Fanta Uva",
-      "ValorBase": 4,
-      "Estoque": 1086,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 5,
-      "NomeProduto": "Fanta",
-      "ValorBase": 9.99,
-      "Estoque": 10,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 6,
-      "NomeProduto": "Fanta Uva",
-      "ValorBase": 4,
-      "Estoque": 1119,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 5,
-      "NomeProduto": "Fanta",
-      "ValorBase": 9.99,
-      "Estoque": 231,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 6,
-      "NomeProduto": "Fanta Uva",
-      "ValorBase": 4,
-      "Estoque": 32,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 5,
-      "NomeProduto": "Fanta",
-      "ValorBase": 9.99,
-      "Estoque": -10,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 6,
-      "NomeProduto": "Fanta Uva",
-      "ValorBase": 4,
-      "Estoque": -11.99,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 5,
-      "NomeProduto": "Fanta",
-      "ValorBase": 9.99,
-      "Estoque": -10,
-      "Descricao": "Um belo produto"
-    },
-    {
-      "id": 6,
-      "NomeProduto": "Fanta Uva",
-      "ValorBase": 4,
-      "Estoque": -11.99,
+      "Estoque": 12200,
       "Descricao": "Um belo produto"
     }
   ],
@@ -103,6 +33,17 @@
       "Quantidade": "123",
       "Descricao": "Um belo produto",
       "id": 1
+    },
+    {
+      "NomeComprador": "123",
+      "Endereco": "123",
+      "Telefone": "123",
+      "ValorTotal": 727.2099999999999,
+      "NomeProduto": "Polvilho",
+      "ValorBase": 6.01,
+      "Quantidade": "121",
+      "Descricao": "Um belo produto",
+      "id": 2
     }
   ]
 }
