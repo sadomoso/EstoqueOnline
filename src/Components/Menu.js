@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Toolbar, AppBar, Typography, Button } from "@mui/material";
+import { Grid, Toolbar, AppBar, Typography } from "@mui/material";
 
 export default function Menu() {
   return (
