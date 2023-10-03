@@ -7,7 +7,7 @@ export default function Menu() {
       <Toolbar>
         <Grid container alignItems="center">
           <Grid item xs={12} md={6} marginY={1}>
-            <Typography variant='h3' display="inline-flex">ESTOQUE</Typography>
+            <Typography variant='h4' display="inline-flex">TALISMÃ DISTRIBUIDORA</Typography>
           </Grid>
           <Grid item xs={12} md={6} container justifyContent="flex-end">
           </Grid>

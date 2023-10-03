@@ -23,7 +23,7 @@ export default function PopupCadastroProdutos({ open, onClose, produtoSelecionad
 
     return (
         <Dialog id={'Vender'} open={open} onClose={onClose} fullScreen>
-            <DialogTitle style={{ backgroundColor: "black", color: "white" }}>Dados da Venda</DialogTitle>
+            <DialogTitle style={{ backgroundColor: "black", color: "white" }}>TALISMÃ DISTRIBUIDORA - Dados da Venda</DialogTitle>
             <DialogContent style={{ backgroundColor: "yellow" }}>
                 {produtoSelecionado && (
                     <Grid container spacing={3}>
