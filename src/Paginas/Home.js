@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, List, ListItem, Typography, Dialog, DialogTitle, DialogContent, DialogActions, Grid, TextField } from "@mui/material";
 
-import GetProdutos from "../Requisicoes/Get.Requisicao";
-import ButtonP from '../Components/Button.module'
-import TextFieldP from "../Components/TextField.module";
-import putRequisicao from "../Requisicoes/Put.Requisicao";
+import GetProdutos from "../Requisicoes/Get.Produto.Requisicao";
+import putRequisicao from "../Requisicoes/Put.Produto.Requisicao";
 
 export default function Home() {
     const [produtos, setProdutos] = useState([]);

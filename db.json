@@ -18,7 +18,7 @@
       "id": 4,
       "NomeProduto": "Polvilho",
       "ValorBase": 6.01,
-      "Estoque": 12200,
+      "Estoque": 12077,
       "Descricao": "Um belo produto"
     }
   ],
@@ -44,6 +44,17 @@
       "Quantidade": "121",
       "Descricao": "Um belo produto",
       "id": 2
+    },
+    {
+      "NomeComprador": "123",
+      "Endereco": "123",
+      "Telefone": "123",
+      "ValorTotal": 739.23,
+      "NomeProduto": "Polvilho",
+      "ValorBase": 6.01,
+      "Quantidade": "123",
+      "Descricao": "Um belo produto",
+      "id": 3
     }
   ]
 }
