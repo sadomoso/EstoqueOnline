@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, List, ListItem, Typography, Grid, IconButton } from "@mui/material";
 import GetProdutos from "../Requisicoes/Get.Produto.Requisicao";
-import putRequisicao from "../Requisicoes/Put.Produto.Requisicao";
 import AddIcon from '@mui/icons-material/Add';
-import PostCadastroProdutoRequisicao from "../Requisicoes/Post.Cadastro.Produto.Requisicao";
 import PopupCadastroProduto from "../Components/PopupCadastroProdutos.module";
 import PopupVendasProdutos from "../Components/PopupVendaProduto.module";
 
@@ -11,10 +9,6 @@ export default function Home() {
     const [produtos, setProdutos] = useState([]);
     const [openPopup, setOpenPopup] = useState(false);
     const [produtoSelecionado, setProdutoSelecionado] = useState(null);
-    const [quantidade, setQuantidade] = useState(0);
-    const [nomeComprador, setNomeComprador] = useState(null);
-    const [endereco, setEndereco] = useState(null);
-    const [telefone, setTelefone] = useState(null);
     const [openPopUpCadastrar, setOpenPopUpCadastrar] = useState(false);
 
     useEffect(() => {
