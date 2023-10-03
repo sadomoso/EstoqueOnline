@@ -41,7 +41,9 @@ export default function Home() {
 
     const handleClosePopup = () => {
         setOpenPopup(false); // Fecha o popup
-    };
+        window.location.reload();  // Atualiza a página
+      };
+      
 
     return (
         <Grid marginTop={4} container justifyContent="center" alignItems="center" height="100vh">

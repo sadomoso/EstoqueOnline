@@ -9,7 +9,6 @@ export default async function putRequisicao(id, NomeProduto, ValorBase, Estoque,
         let validadorDeEstoque = checagemDados.data.Estoque 
         validadorDeEstoque = validadorDeEstoque - quantidade
 
-
         if (validadorDeEstoque >= 0 && nomeComprador !== null && endereco !== null && telefone !== null) {
             try {
                 const resposta = await axios.put(`http://localhost:4000/Produtos/${id}`, {
