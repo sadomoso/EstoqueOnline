@@ -5,6 +5,8 @@ import AddIcon from '@mui/icons-material/Add';
 import PopupCadastroProduto from "../Components/PopupCadastroProdutos.module";
 import PopupVendasProdutos from "../Components/PopupVendaProduto.module";
 
+
+
 export default function Home() {
     const [produtos, setProdutos] = useState([]);
     const [openPopup, setOpenPopup] = useState(false);
@@ -91,9 +93,10 @@ export default function Home() {
                     </IconButton>
                 </Box>
             </Grid>
-
-            <PopupVendasProdutos open={openPopup} onClose={handleClosePopup} produtoSelecionado={produtoSelecionado} />
-
+            <PopupVendasProdutos open={openPopup}
+                onClose={handleClosePopup}
+                produtoSelecionado={produtoSelecionado}
+            />
             <PopupCadastroProduto
                 open={openPopUpCadastrar}
                 onClose={handleClosePopup}
