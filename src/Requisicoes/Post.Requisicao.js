@@ -1,4 +1,3 @@
-// Arquivo: Post.Requisicao.js
 
 import axios from "axios";
 

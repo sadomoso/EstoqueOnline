@@ -94,9 +94,15 @@
   ],
   "Registro-de-Vendas": [
     {
-      "nomeComprador": "Felipe",
-      "Endereco": "Minas Gerais, Belo Horizonte, Castelo, Rua Doutor Rubens Guimarães, 147, 402 ",
-      "Telefone": 553194462902
+      "NomeComprador": "felipe",
+      "Endereco": "rua doutor rubens guimarães",
+      "Telefone": "31994462902",
+      "ValorTotal": 739.23,
+      "NomeProduto": "Polvilho",
+      "ValorBase": 6.01,
+      "Quantidade": "123",
+      "Descricao": "Um belo produto",
+      "id": 1
     }
   ]
 }
