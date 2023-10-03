@@ -13,7 +13,29 @@
       "ADM": false
     }
   ],
-  "Produtos": [],
+  "Produtos": [
+    {
+      "id": 1,
+      "NomeProduto": "coca",
+      "ValorBase": "25.10",
+      "Estoque": 0,
+      "Descricao": "Coca cola"
+    },
+    {
+      "id": 2,
+      "NomeProduto": "jaja",
+      "ValorBase": "122",
+      "Estoque": 0,
+      "Descricao": "um produto da jaja corporation"
+    },
+    {
+      "id": 3,
+      "NomeProduto": "produto",
+      "ValorBase": "15.99",
+      "Estoque": 13,
+      "Descricao": "Um produto produtado de outros produtos"
+    }
+  ],
   "Registro-de-Vendas": [
     {
       "NomeComprador": "felipe",
@@ -47,6 +69,39 @@
       "Quantidade": "123",
       "Descricao": "Um belo produto",
       "id": 3
+    },
+    {
+      "NomeComprador": "joge",
+      "Endereco": "rua bla bla bla",
+      "Telefone": "553199999999",
+      "ValorTotal": 301.20000000000005,
+      "NomeProduto": "coca",
+      "ValorBase": "25.10",
+      "Quantidade": "12",
+      "Descricao": "Coca cola",
+      "id": 4
+    },
+    {
+      "NomeComprador": "felipe",
+      "Endereco": "vlas",
+      "Telefone": "13111",
+      "ValorTotal": 244,
+      "NomeProduto": "jaja",
+      "ValorBase": "122",
+      "Quantidade": "2",
+      "Descricao": "um produto da jaja corporation",
+      "id": 5
+    },
+    {
+      "NomeComprador": "jorjin",
+      "Endereco": "rua salamaesco",
+      "Telefone": "99999999",
+      "ValorTotal": 191.88,
+      "NomeProduto": "produto",
+      "ValorBase": "15.99",
+      "Quantidade": "12",
+      "Descricao": "Um produto produtado de outros produtos",
+      "id": 6
     }
   ]
 }
