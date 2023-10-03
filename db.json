@@ -13,15 +13,7 @@
       "ADM": false
     }
   ],
-  "Produtos": [
-    {
-      "id": 4,
-      "NomeProduto": "Polvilho",
-      "ValorBase": 6.01,
-      "Estoque": 12077,
-      "Descricao": "Um belo produto"
-    }
-  ],
+  "Produtos": [],
   "Registro-de-Vendas": [
     {
       "NomeComprador": "felipe",

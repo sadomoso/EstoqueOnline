@@ -3,6 +3,9 @@ import { Box, Button, List, ListItem, Typography, Dialog, DialogTitle, DialogCon
 
 import GetProdutos from "../Requisicoes/Get.Produto.Requisicao";
 import putRequisicao from "../Requisicoes/Put.Produto.Requisicao";
+import IconButton from '@mui/material/IconButton';
+import AddIcon from '@mui/icons-material/Add';
+import PostCadastroProdutoRequisicao from "../Requisicoes/Post.Cadastro.Produto.Requisicao";
 
 export default function Home() {
     const [produtos, setProdutos] = useState([]);
@@ -12,6 +15,12 @@ export default function Home() {
     const [nomeComprador, setNomeComprador] = useState(null)
     const [endereco, setEndereco] = useState(null)
     const [telefone, setTelefone] = useState(null)
+
+    const [openPopUpCadastrar, setOpenPopUpCadastrar] = useState(false)
+    const [nomeCadastroProdut, setNomeCadastroProduto] = useState(null)
+    const [estoqueCadastroProduto, setEstoqueCadastroProduto] = useState(null)
+    const [descricaoCadastroProduto, setDescricaoCadastroProduto] = useState(null)
+    const [valorCadastroProduto, setValorCadastroproduto] = useState(null)
 
     useEffect(() => {
         const execucaoProdutos = async () => {
@@ -32,16 +41,19 @@ export default function Home() {
 
     const handleVenderClick = (produto) => {
         // Lógica para vender o produto
-        console.log(`Vendido: ${produto.NomeProduto}`);
         setProdutoSelecionado(produto); // Define o produto selecionado
         setOpenPopup(true); // Abre o popup
     };
+    const handleCadastrarClick = () => {
+        setOpenPopUpCadastrar(true);
+    }
 
     const handleClosePopup = () => {
         setOpenPopup(false); // Fecha o popup
+        setOpenPopUpCadastrar(false)
         window.location.reload();  // Atualiza a página
-      };
-      
+    };
+
 
     return (
         <Grid marginTop={4} container justifyContent="center" alignItems="center" height="100vh">
@@ -88,11 +100,18 @@ export default function Home() {
                             </ListItem>
                         ))}
                     </List>
+                    <IconButton
+                        color="primary" // Define a cor do ícone como azul
+                        aria-label="Adicionar" // Define um rótulo acessível para o ícone
+                        onClick={() => handleCadastrarClick()}
+                    >
+                        <AddIcon /> {/* Ícone de adição */}
+                    </IconButton>
                 </Box>
             </Grid>
 
             {/* Popup para confirmar a venda */}
-            <Dialog open={openPopup} onClose={handleClosePopup} fullScreen>
+            <Dialog id={'Vender'} open={openPopup} onClose={handleClosePopup} fullScreen>
                 <DialogTitle style={{ backgroundColor: "black", color: "white" }}>Dados da Venda</DialogTitle>
                 <DialogContent style={{ backgroundColor: "yellow" }}>
                     {produtoSelecionado && (
@@ -186,6 +205,68 @@ export default function Home() {
                         Confirmar Venda
                     </Button>
                 </DialogActions>
+            </Dialog>
+            {/* Popup para cadastar Produto */}
+            <Dialog id={"Cadastar"} open={openPopUpCadastrar} onClose={handleClosePopup} fullScreen>
+                <DialogTitle style={{ backgroundColor: "black", color: "white" }}>Cadastro de produtos</DialogTitle>
+                <DialogContent style={{ backgroundColor: "yellow" }}>
+                    <Grid container spacing={1}>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                sx={{ backgroundColor: "white" }}
+                                onChange={(event) => setNomeCadastroProduto(event.target.value)}
+                                variant="outlined"
+                                label="Nome do produto"
+                                fullWidth
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                sx={{ backgroundColor: "white" }}
+                                onChange={(event) => setValorCadastroproduto(event.target.value)}
+                                variant="outlined"
+                                label="Valor do produto"
+                                fullWidth
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                sx={{ backgroundColor: "white" }}
+                                onChange={(event) => setDescricaoCadastroProduto(event.target.value)}
+                                variant="outlined"
+                                label="Descrição do produto"
+                                fullWidth
+                            />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <TextField
+                                sx={{ backgroundColor: "white" }}
+                                onChange={(event) => setEstoqueCadastroProduto(event.target.value)}
+                                variant="outlined"
+                                label="Estoque"
+                                fullWidth
+                            />
+                        </Grid>
+
+
+                    </Grid>
+
+                </DialogContent>
+                <DialogActions style={{ backgroundColor: "black" }}>
+                    <Button onClick={handleClosePopup} color="primary">
+                        Cancelar
+                    </Button>
+                    <Button
+                        onClick={() => PostCadastroProdutoRequisicao(
+                            nomeCadastroProdut,
+                            valorCadastroProduto,
+                            estoqueCadastroProduto,
+                            descricaoCadastroProduto,
+                            handleClosePopup)}
+                        color="primary"
+                    >Cadastrar</Button>
+                </DialogActions>
+
             </Dialog>
 
         </Grid >
