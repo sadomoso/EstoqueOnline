@@ -22,7 +22,7 @@ export default async function postRequisicao(NomeProduto, ValorBase, Descricao, 
             return false;
         }
     } catch (error) {
-        alert("Deu errado o envio", error);
+        alert("Não foi possivel realizar o registro da venda, contate o suporte!", error);
         return false;
     }
 }
