@@ -1,8 +1,6 @@
-import { Box } from "@mui/material";
-import ButtonP from "../Components/Button.module";
+import { Box, TextField, Button } from "@mui/material";
 import loginRequisicao from "../Requisicoes/Login.Requisicao";
 import React, { useState } from "react";
-import TextFieldP from "../Components/TextField.module";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -49,18 +47,24 @@ export default function Login() {
         boxShadow="0px 3px 6px rgba(0, 0, 0, 0.16)"
       >
         <h1>Login</h1>
-        <TextFieldP
-          propsTexto={{ Texto: "Usuario" }}
-          propsType={{ Type: "text" }}
-          propsOnChange={(e) => setUsuario(e.target.value)}
-        ></TextFieldP>
+        <TextField
+          label={"Usuario"}
+          type={'text'} // Correção aqui
+          onChange={(e) => setUsuario(e.target.value)}
+          variant="outlined"
+          sx={{ p: 0, my: 2, justifyContent: 'center', alignItems: 'center' }}
+        />
 
-        <TextFieldP
-          propsTexto={{ Texto: "Senha" }}
-          propsType={{ Type: "Password" }}
-          propsOnChange={(e) => setSenha(e.target.value)}
-        ></TextFieldP>
-        <ButtonP Texto="Confirmar" propsFunciton={handleLogin} />
+        <TextField
+          label={"Senha"}
+          type={'password'} // Correção aqui
+          onChange={(e) => setSenha(e.target.value)}
+          variant="outlined"
+          sx={{ p: 0, my: 2, justifyContent: 'center', alignItems: 'center' }}
+        />
+        <Button variant='outlined' onClick={handleLogin} sx={{ my: 1 }}>
+          {"Confirmar"}
+        </Button>
       </Box>
     </Box>
   );
