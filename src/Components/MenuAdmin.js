@@ -1,4 +1,4 @@
-import { Grid, Toolbar, AppBar, Typography, IconButton, Button } from "@mui/material";
+import { Grid, Toolbar, AppBar, Typography, IconButton, Box } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 
 import React, { useEffect, useState } from "react";
@@ -21,13 +21,13 @@ export default function MenuAdmin() {
         <AppBar sx={{ backgroundColor: 'black' }}>
             <Toolbar>
                 <Grid container alignItems="center">
-                    <Grid item xs={12} md={6} marginY={1}>
-                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <Grid minWidth={'100%'} item xs={12} md={6} marginY={1}>
+                        <Box style={{ display: 'flex', alignItems: 'center' }}>
                             <Typography variant='h4' display="inline-flex">TALISMÃ DISTRIBUIDORA</Typography>
                             <IconButton onClick={handleMenuClick} color="primary" aria-label="Adicionar" sx={{ marginLeft: 'auto' }}>
                                 <AddIcon />
                             </IconButton>
-                        </div>
+                        </Box>
                     </Grid>
 
                 </Grid>

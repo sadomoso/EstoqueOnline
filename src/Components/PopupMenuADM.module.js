@@ -15,17 +15,19 @@ export default function PopupMenuADM({ open, onClose }) {
     };
 
     return (
-        <Dialog id={'MenuADM'} open={open} onClose={onClose}>
-            <Grid item xs={12} md={6} container justifyContent="end">
-                <Button onClick={handleCadastrarClick}>Cadastrar Produto</Button>
-                <Button>Registro de Vendas</Button>
-                <Button>Alterar Estoque</Button>
+        <Dialog id={'MenuADM'} open={open} onClose={onClose} >
+            <Grid minWidth={'100%'} sx={{ backgroundColor: 'black' }} item xs={12} md={6} container justifyContent="end">
+                
+                <Button sx={{ color: 'white' }} onClick={handleCadastrarClick}>Cadastrar Produto</Button>
+                <Button sx={{ color: 'white' }}>Registro de Vendas</Button>
+                <Button sx={{ color: 'white' }}>Alterar Estoque</Button>
 
-                <PopupCadastroProduto
-                    open={openPopUpCadastrar}
-                    onClose={handleClosePopup}
-                />
+
             </Grid>
+            <PopupCadastroProduto
+                open={openPopUpCadastrar}
+                onClose={handleClosePopup}
+            />
         </Dialog >
     )
 }
