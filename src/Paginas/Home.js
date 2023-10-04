@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, List, ListItem, Typography, Grid, IconButton } from "@mui/material";
-import GetProdutos from "../Requisicoes/Get.Produto.Requisicao";
 import AddIcon from '@mui/icons-material/Add';
 import PopupCadastroProduto from "../Components/PopupCadastroProdutos.module";
 import PopupVendasProdutos from "../Components/PopupVendaProduto.module";
+import GetProdutos from '../Requisicoes/Get.Produto.Requisicao'
+
 
 export default function Home() {
     const [produtos, setProdutos] = useState([]);
@@ -91,9 +92,10 @@ export default function Home() {
                     </IconButton>
                 </Box>
             </Grid>
-
-            <PopupVendasProdutos open={openPopup} onClose={handleClosePopup} produtoSelecionado={produtoSelecionado} />
-
+            <PopupVendasProdutos open={openPopup}
+                onClose={handleClosePopup}
+                produtoSelecionado={produtoSelecionado}
+            />
             <PopupCadastroProduto
                 open={openPopUpCadastrar}
                 onClose={handleClosePopup}
