@@ -3,8 +3,7 @@ import { Box, Button, List, ListItem, Typography, Grid, IconButton } from "@mui/
 import AddIcon from '@mui/icons-material/Add';
 import PopupCadastroProduto from "../Components/PopupCadastroProdutos.module";
 import PopupVendasProdutos from "../Components/PopupVendaProduto.module";
-import GetProdutos from '../Requisicoes/Get.Produto.Requisicao'
-
+import GetProdutos from '../Requisicoes/Get.Produto.Requisicao';
 
 export default function Home() {
     const [produtos, setProdutos] = useState([]);
@@ -44,9 +43,8 @@ export default function Home() {
 
     return (
         <Grid marginTop={4} container justifyContent="center" alignItems="center" height="100vh">
-            <Grid item xs={12} sm={6} md={4}>
+            <Grid item xs={12} sm={10} md={8} lg={6}>
                 <Box
-                    maxwidth={'80vh'}
                     component="form"
                     p={2}
                     display="flex"
@@ -54,32 +52,55 @@ export default function Home() {
                     justifyContent="space-between"
                     borderRadius={2}
                     borderColor="Grey"
-                    sx={{ backgroundColor: "white" }}
-                    border="3px solid"
-                    boxShadow="0px 3px 6px rgba(0, 0, 0, 0.16)"
+                    sx={{
+                        backgroundColor: "white",
+                        border: "3px solid",
+                        boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.16)",
+                        width: "100%",
+                        maxWidth: "800px",
+                        margin: "0 auto",
+                        padding: "16px",
+                        '@media (max-width: 768px)': {
+                            maxWidth: "90%", // Reduzindo a largura para telas menores
+                        },
+                    }}
                 >
-                    <List sx={{ maxHeight: "calc(70vh - 40px)", overflowY: "auto" }}>
+                    <List sx={{ maxHeight: "50vh", overflowY: "auto" }}>
                         {produtos.map((produto, index) => (
                             <ListItem
                                 key={index}
                                 sx={{
-                                    height: "10vh",
-                                    padding: "1px",
-                                    borderRadius: "2px",
-                                    border: "1px solid",
-                                    borderColor: "black",
-                                    marginBottom: '2vh',
-                                    position: "relative",
+                                    backgroundColor: index % 2 === 0 ? "#f2f2f2" : "white",
+                                    marginBottom: "12px",
+                                    borderRadius: "8px",
+                                    border: "1px solid #ccc",
+                                    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+                                    transition: "background-color 0.3s ease",
+                                    "&:hover": {
+                                        backgroundColor: "#e0e0e0",
+                                    },
+                                    display: "flex",
+                                    flexDirection: "column",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    textAlign: "center",
                                 }}
                             >
-                                <Typography sx={{ position: "absolute", bottom: "0.5vh", left: "4vh" }}>Codigo: {produto.id}</Typography>
-                                <Typography sx={{ position: "absolute", top: "0.5vh", left: "4vh" }}>{produto.NomeProduto}</Typography>
-                                <Typography sx={{ position: "absolute", top: "0.5vh", right: "4vh", }}> R$: {produto.ValorBase}</Typography>
-                                <Typography sx={{ position: "absolute", top: "0.5vh", left: "40%" }}> Estoque: {produto.Estoque}</Typography>
+                                <Typography variant="h6" sx={{ fontWeight: "bold", marginBottom: "8px" }}>{produto.NomeProduto}</Typography>
+                                <Typography >Código: {produto.id}</Typography>
+                                <Typography>Estoque: {produto.Estoque}</Typography>
+                                <Typography sx={{ fontWeight: "bold", marginTop: "8px" }}>R$ {produto.ValorBase}</Typography>
                                 <Button
                                     variant="contained"
                                     color="success"
-                                    sx={{ height: '3vh', width: '4vh', position: 'absolute', right: '4vh', bottom: '0.5vh' }}
+                                    sx={{
+                                        backgroundColor: "#4caf50",
+                                        color: "white",
+                                        "&:hover": {
+                                            backgroundColor: "#45a049",
+                                        },
+                                        marginTop: "12px",
+                                    }}
                                     onClick={() => handleVenderClick(produto)}
                                 >
                                     Vender
@@ -87,9 +108,7 @@ export default function Home() {
                             </ListItem>
                         ))}
                     </List>
-                    <IconButton color="primary" aria-label="Adicionar" onClick={handleCadastrarClick}>
-                        <AddIcon />
-                    </IconButton>
+
                 </Box>
             </Grid>
             <PopupVendasProdutos open={openPopup}
