@@ -109,9 +109,6 @@ export default function Home() {
                         ))}
                     </List>
 
-                    <IconButton color="primary" aria-label="Adicionar" onClick={handleCadastrarClick}>
-                        <AddIcon />
-                    </IconButton>
                 </Box>
             </Grid>
             <PopupVendasProdutos open={openPopup}

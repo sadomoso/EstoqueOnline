@@ -12,7 +12,7 @@ export default function Login() {
     try {
       // Chama a função de requisição de login de forma assíncrona
       const loginsucesso = await loginRequisicao(usuario, senha);
-
+      console.log(loginsucesso)
       if (loginsucesso === true) {
         navigate("/Home");
       } else {
