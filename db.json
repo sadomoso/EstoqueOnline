@@ -36,11 +36,25 @@
       "Descricao": "Um produto produtado de outros produtos"
     },
     {
+      "id": 4,
       "NomeProduto": "joja",
       "ValorBase": "100,00",
-      "Estoque": "10000",
-      "Descricao": "um produto joja",
-      "id": 4
+      "Estoque": 0,
+      "Descricao": "um produto joja"
+    },
+    {
+      "id": 5,
+      "NomeProduto": "Fanta uva",
+      "ValorBase": "10,00",
+      "Estoque": 0,
+      "Descricao": "refrigerante"
+    },
+    {
+      "id": 6,
+      "NomeProduto": "coca cola",
+      "ValorBase": "10.99",
+      "Estoque": 999,
+      "Descricao": "um refri"
     }
   ],
   "Registro-de-Vendas": [
@@ -109,6 +123,39 @@
       "Quantidade": "12",
       "Descricao": "Um produto produtado de outros produtos",
       "id": 6
+    },
+    {
+      "NomeComprador": "dsada",
+      "Endereco": "dasda",
+      "Telefone": "1231231231",
+      "ValorTotal": null,
+      "NomeProduto": "joja",
+      "ValorBase": "100,00",
+      "Quantidade": "10000",
+      "Descricao": "um produto joja",
+      "id": 7
+    },
+    {
+      "NomeComprador": "adsda",
+      "Endereco": "dasda",
+      "Telefone": "1231231",
+      "ValorTotal": null,
+      "NomeProduto": "Fanta uva",
+      "ValorBase": "10,00",
+      "Quantidade": "100",
+      "Descricao": "refrigerante",
+      "id": 8
+    },
+    {
+      "NomeComprador": "bla",
+      "Endereco": "rua bla bka",
+      "Telefone": "31999999",
+      "ValorTotal": 10.99,
+      "NomeProduto": "coca cola",
+      "ValorBase": "10.99",
+      "Quantidade": "1",
+      "Descricao": "um refri",
+      "id": 9
     }
   ]
 }

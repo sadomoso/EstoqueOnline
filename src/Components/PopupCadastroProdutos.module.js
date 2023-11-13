@@ -18,6 +18,7 @@ export default function PopupCadastroProduto({ open, onClose }) { // Correção 
     const [descricaoCadastroProduto, setDescricaoCadastroProduto] = useState(null)
     const [valorCadastroProduto, setValorCadastroproduto] = useState(null)
 
+
     return (
         <Dialog id={"Cadastar"} open={open} onClose={onClose} fullScreen>
             <DialogTitle style={{ backgroundColor: "black", color: "white" }}>TALISMÃ DISTRIBUIDORA - Cadastro de produtos</DialogTitle>
