@@ -5,7 +5,7 @@ import PopupCadastroProduto from "../Components/PopupCadastroProdutos.module";
 import PopupVendasProdutos from "../Components/PopupVendaProduto.module";
 import GetProdutos from '../Requisicoes/Get.Produto.Requisicao';
 
-export default function Home() {
+const Home = () => {
     const [produtos, setProdutos] = useState([]);
     const [openPopup, setOpenPopup] = useState(false);
     const [produtoSelecionado, setProdutoSelecionado] = useState(null);
@@ -61,65 +61,63 @@ export default function Home() {
                         margin: "0 auto",
                         padding: "16px",
                         '@media (max-width: 768px)': {
-                            maxWidth: "90%", // Reduzindo a largura para telas menores
+                            maxWidth: "90%",
                         },
                     }}
                 >
                     <List sx={{ maxHeight: "50vh", overflowY: "auto" }}>
                         {produtos.map((produto, index) => (
-                            <ListItem
-                                key={index}
-                                sx={{
-                                    backgroundColor: index % 2 === 0 ? "#f2f2f2" : "white",
-                                    marginBottom: "12px",
-                                    borderRadius: "8px",
-                                    border: "1px solid #ccc",
-                                    boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
-                                    transition: "background-color 0.3s ease",
-                                    "&:hover": {
-                                        backgroundColor: "#e0e0e0",
-                                    },
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    textAlign: "center",
-                                }}
-                            >
-                                <Typography variant="h6" sx={{ fontWeight: "bold", marginBottom: "8px" }}>{produto.NomeProduto}</Typography>
-                                <Typography >Código: {produto.id}</Typography>
-                                <Typography>Estoque: {produto.Estoque}</Typography>
-                                <Typography sx={{ fontWeight: "bold", marginTop: "8px" }}>R$ {produto.ValorBase}</Typography>
-                                <Button
-                                    variant="contained"
-                                    color="success"
+                            // Adiciona a validação do estoque antes de exibir o produto
+                            produto.Estoque !== 0 && (
+                                <ListItem
+                                    key={index}
                                     sx={{
-                                        backgroundColor: "#4caf50",
-                                        color: "white",
+                                        backgroundColor: index % 2 === 0 ? "#f2f2f2" : "white",
+                                        marginBottom: "12px",
+                                        borderRadius: "8px",
+                                        border: "1px solid #ccc",
+                                        boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+                                        transition: "background-color 0.3s ease",
                                         "&:hover": {
-                                            backgroundColor: "#45a049",
+                                            backgroundColor: "#e0e0e0",
                                         },
-                                        marginTop: "12px",
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        textAlign: "center",
                                     }}
-                                    onClick={() => handleVenderClick(produto)}
                                 >
-                                    Vender
-                                </Button>
-                            </ListItem>
+                                    <Typography variant="h6" sx={{ fontWeight: "bold", marginBottom: "8px" }}>{produto.NomeProduto}</Typography>
+                                    <Typography>Código: {produto.id}</Typography>
+                                    <Typography>Estoque: {produto.Estoque}</Typography>
+                                    <Typography sx={{ fontWeight: "bold", marginTop: "8px" }}>R$ {produto.ValorBase}</Typography>
+                                    <Button
+                                        variant="contained"
+                                        color="success"
+                                        sx={{
+                                            backgroundColor: "#4caf50",
+                                            color: "white",
+                                            "&:hover": {
+                                                backgroundColor: "#45a049",
+                                            },
+                                            marginTop: "12px",
+                                        }}
+                                        onClick={() => handleVenderClick(produto)}
+                                    >
+                                        Vender
+                                    </Button>
+                                </ListItem>
+                            )
                         ))}
                     </List>
                     <Button onClick={handleCadastrarClick}>Cadastrar Novo Produto</Button>
-
                 </Box>
             </Grid>
-            <PopupVendasProdutos open={openPopup}
-                onClose={handleClosePopup}
-                produtoSelecionado={produtoSelecionado}
-            />
-            <PopupCadastroProduto
-                open={openPopUpCadastrar}
-                onClose={handleClosePopup}
-            />
+            <PopupVendasProdutos open={openPopup} onClose={handleClosePopup} produtoSelecionado={produtoSelecionado} />
+            <PopupCadastroProduto open={openPopUpCadastrar} onClose={handleClosePopup} />
         </Grid>
     );
-}
+};
+
+export default Home;
