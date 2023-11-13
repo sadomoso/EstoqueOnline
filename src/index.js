@@ -3,13 +3,12 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css'; // Importe o arquivo index.css
-import MenuAdmin from './Components/MenuAdmin';
 import Menu from "./Components/Menu";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MenuAdmin/>
+    <Menu/>
     <App />
   </React.StrictMode>
 );

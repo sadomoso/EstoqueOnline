@@ -108,6 +108,7 @@ export default function Home() {
                             </ListItem>
                         ))}
                     </List>
+                    <Button onClick={handleCadastrarClick}>Cadastrar Novo Produto</Button>
 
                 </Box>
             </Grid>

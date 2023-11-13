@@ -34,6 +34,13 @@
       "ValorBase": "15.99",
       "Estoque": 13,
       "Descricao": "Um produto produtado de outros produtos"
+    },
+    {
+      "NomeProduto": "joja",
+      "ValorBase": "100,00",
+      "Estoque": "10000",
+      "Descricao": "um produto joja",
+      "id": 4
     }
   ],
   "Registro-de-Vendas": [
